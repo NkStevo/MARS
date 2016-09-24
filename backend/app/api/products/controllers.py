@@ -14,4 +14,3 @@ api = Api(products)
 
 api.add_resource(Products, '')
 api.add_resource(ProductDetails, '/<string:productName>')
-
