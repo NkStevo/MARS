@@ -2,7 +2,7 @@ import requests
 from app import app
 from flight import Flight
 
-flight = Flight(['1997', '2016-09-24'])
+flight = Flight(['2203', '2016-09-26'])
 
 #places_resp = requests.get(gp_url)
 

@@ -1,4 +1,5 @@
 import requests
+import sys
 
 class Flight:
     def __init__(self, flight_info):
@@ -13,7 +14,12 @@ class Flight:
             self.airport_name = json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureAirportName"]
 
             self.flight_city = json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureCityName"]
-            self.flight_gate = json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureGate"]
+
+            try:
+                self.flight_gate = json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureGate"]
+            except KeyError:
+                self.flight_gate = 'gate not yet assigned'
+
             self.flight_terminal = json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureTerminal"]
 
             self.flight_delay = json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureLocalTimeEstimatedActualString"]
@@ -32,14 +38,18 @@ class Flight:
                 json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalAirportName"],
 
                 json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalCityName"],
-                json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalGate"],
                 json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalTerminal"],
 
                 json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalTsoagLatitudeDecimal"],
                 json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalTsoagLongitudeDecimal"]
             ]
 
-            self.arrival_flight = Flight(arrival_vars)
+            try:
+                arrival_vars.insert(json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalGate"], 3)
+            except KeyError:
+                arrival_vars.append('gate not yet assigned')
+
+            self.arrival = Flight(arrival_vars)
         else:
             self.airline_code = flight_info[0]
             self.airline_name = flight_info[1]
@@ -47,8 +57,10 @@ class Flight:
             print flight_info
 
             self.flight_city = flight_info[2]
-            self.flight_gate = flight_info[3]
-            self.flight_terminal = flight_info[4]
 
-            self.flight_lat = flight_info[5]
-            self.flight_long = flight_info[6]
+            self.flight_terminal = flight_info[3]
+
+            self.flight_lat = flight_info[4]
+            self.flight_long = flight_info[5]
+
+            self.flight_gate = flight_info[6]
