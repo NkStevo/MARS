@@ -1,0 +1,17 @@
+{
+    "netbackup": [  // Product name
+        {
+            "backup": { // Action
+                "route": "/backup", // Top level URL
+                "required_params": [    // Required attributes
+                    {
+                        "id": "String",
+                        "date": "dateType"
+                    }
+                ],
+                "optional_params": [] // Optional attributes
+            },
+            "restore": {}
+        }
+    ]
+}
