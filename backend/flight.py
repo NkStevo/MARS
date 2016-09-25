@@ -34,6 +34,7 @@ class Flight:
             arrival_vars = [
                 self.airline_code,
                 self.airline_name,
+
                 json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalAirportCode"],
                 json_output["flightStatusResponse"]["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["arrivalAirportName"],
 
@@ -56,11 +57,14 @@ class Flight:
 
             print flight_info
 
-            self.flight_city = flight_info[2]
+            self.airport_code = flight_info[2]
+            self.airport_name = flight_info[3]
 
-            self.flight_terminal = flight_info[3]
+            self.flight_city = flight_info[4]
 
-            self.flight_lat = flight_info[4]
-            self.flight_long = flight_info[5]
+            self.flight_terminal = flight_info[5]
 
-            self.flight_gate = flight_info[6]
+            self.flight_lat = flight_info[6]
+            self.flight_long = flight_info[7]
+
+            self.flight_gate = flight_info[8]
