@@ -1,11 +1,11 @@
 import requests
+import json
 from flight import Flight
 
 class Terminal_Time:
 
     @staticmethod
     def terminalWaitList(flight):
-        flight = Flight(['2203', '2016-09-26'])
         a_code = flight.airport_code
         airline = flight.airline_name
 
@@ -24,4 +24,4 @@ class Terminal_Time:
             if wait_list.has_key(s["checkpointID"]) and wait_list[s["checkpointID"]] is "none":
                 wait_list[s["checkpointID"]]=s["waitTime"]
 
-        return wait_list
+        return json.dumps(wait_list)
