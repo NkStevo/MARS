@@ -1,4 +1,5 @@
 import requests
+import json
 from flight import Flight
 from place import Place
 
@@ -6,8 +7,6 @@ class Places_Integration:
 
     @staticmethod
     def placeList(flight, keyword):
-        #flight = Flight(['2203', '2016-09-26'])
-
         gd_payload = 'key=AIzaSyCQaKHt63pgkdx8v8p3PuhLDrFsvLGyMYM'+ \
             '&location=' + str(flight.arrival.flight_lat) + "," + \
             str(flight.arrival.flight_long) + '&radius=' + '32187'+ \
@@ -29,4 +28,12 @@ class Places_Integration:
             pid = s["place_id"]
             places.append(Place(pid, ph))
 
-        return places
+        places_out = {'place_list': []}
+
+        for s in places:
+            places_out['place_list'].append({'name' : s.name, 'icon' : s.icon, \
+                'rating' : s.rating, 'phone' : s.phone, 'address' : s.address, \
+                'lat' : s.lat, 'lng' : s.lng})
+
+
+        return json.dumps(places_out)
