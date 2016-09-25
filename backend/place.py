@@ -9,8 +9,6 @@ class Place:
         pl = requests.get('https://maps.googleapis.com/maps/api/place/details/json?' + gd_payload)
         places_json = pl.json()
 
-        print places_json
-
         self.name = places_json["result"]["name"]
         self.icon = places_json["result"]["icon"]
 
