@@ -55,8 +55,6 @@ class Flight:
             self.airline_code = flight_info[0]
             self.airline_name = flight_info[1]
 
-            print flight_info
-
             self.airport_code = flight_info[2]
             self.airport_name = flight_info[3]
 

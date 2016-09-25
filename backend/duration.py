@@ -1,4 +1,6 @@
 import requests
+import flask
+import json
 from app import app
 from flight import Flight
 
@@ -6,8 +8,6 @@ class Duration:
 
     @staticmethod
     def getDriveTime(flight):
-        flight = Flight(['2203', '2016-09-26'])
-
         #places_resp = requests.get(gp_url)
 
 
@@ -32,4 +32,4 @@ class Duration:
         gd = requests.get('http://maps.googleapis.com/maps/api/distancematrix/json?' + gd_payload)
         duration_json = gd.json()
 
-        return duration_json["rows"][0]["elements"][0]["duration"]["text"]
+        return json.dumps({"eta": duration_json["rows"][0]["elements"][0]["duration"]["text"]})
