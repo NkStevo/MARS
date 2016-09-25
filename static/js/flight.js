@@ -5,8 +5,8 @@
 * Time: 04:06 PM
 * To change this template use Tools | Templates.
 */
- 
-var flightNum; 
+
+var flightNum;
 var user;
 var flight_status_url = "https://demo30-test.apigee.net/v1/hack/status"
 var airport_search_url = "https://demo30-test.apigee.net/v1/hack/search/airport"
@@ -18,20 +18,20 @@ var distance_matrix_url = "https://maps.googleapis.com/maps/api/distancematrix/j
 var distance_matrix_api_key = "AIzaSyCqcO7IsQMdP15hsUBBRzzaB-Gs6sc3e5I"
 
 function loadFlight(flightNumber,firstName) {
-    
+
     //define variables
-  
+
 //     var flightStuff = JSON.parse(flightNum.responseText);
      user = firstName;
      flightNum = flightNumber;
-    
+
         alert("Hi there");
 
     //pull HTML elements
 //     document.getElementById('origin').innerHTML = flightStuff.origin;
 //     document.getElementById('destination').innerHTML = flightStuff.destination;
 //     document.getElementById('').innerHTML = flightStuff.;
-    
+
 }
 
 
@@ -50,13 +50,13 @@ function flight_search() {
 
     if(dd<10) {
         dd='0'+dd
-    } 
+    }
 
     if(mm<10) {
         mm='0'+mm
-    } 
+    }
     today = yyyy+'-'+mm+'-'+dd;
-    
+
     alert(today);
     $.getJSON(
         flight_status_url,
@@ -65,8 +65,8 @@ function flight_search() {
             var lat = data['flightStatusResponse']["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureAirportCode"];
 //             var long = data['longitude_deg'];
            alert('page contents: ' + lat);
-            
-            
+
+
             document.getElementById('userMsg').innerHTML = lat;
         }
     );
@@ -74,8 +74,8 @@ function flight_search() {
 }
 
 
-var getDistance(srcLatLong, dstLatLong) {
-    
+var getDistance = function(srcLatLong, dstLatLong) {
+
     getJSON(
         distance_matrix_url,
         {'origins': srcLatLong, 'destinations':dstLatLong, 'apikey': distance_matrix_api_key},
@@ -83,11 +83,9 @@ var getDistance(srcLatLong, dstLatLong) {
             var lat = data['flightStatusResponse']["statusResponse"]["flightStatusTO"]["flightStatusLegTOList"]["departureAirportCode"];
 //             var long = data['longitude_deg'];
            alert('page contents: ' + lat);
-            
-            
+
+
             document.getElementById('userMsg').innerHTML = lat;
         }
     );
 }
-
-

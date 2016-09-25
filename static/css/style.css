@@ -6,7 +6,7 @@
     Description: Stylesheet for Detla voi's splash page - navbar, text, and more.
 */
 
-/* 
+/*
  * Navy: #052060
  * Red: #8c0b1a
  * Red2: #ef1c08
@@ -14,16 +14,16 @@
  * Text: #fff;                // white text
  * Text2:#ccc;                // light grey text
  * font-family: Roboto, 300, 700;
- * 
+ *
  */
 
 
 
-/* 
+/*
  *  ----------------------------------------------------
- *                     TEXT STYLES 
+ *                     TEXT STYLES
  *  ----------------------------------------------------
- */ 
+ */
 /* headers */
 
 h1{
@@ -36,8 +36,8 @@ h1{
     padding-top: 0px;
     text-align: center;
     margin-top: 0px;
-    
-    
+
+
 }
 
 
@@ -69,14 +69,14 @@ h4 {
     letter-spacing: 4px;
     text-transform: uppercase;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    
+
 }
 h5 {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-size: 18px;
-    letter-spacing: 2px; 
+    letter-spacing: 2px;
     font-weight: 300;
-    
+
 }
 h6 {
     margin: 0 0 15px;
@@ -86,18 +86,17 @@ h6 {
 
 
 body {
-	background-image: url("img/plane.png");
 	background-size: inherit;
 	background-repeat: no-repeat;
 }
 
 .intro {
-    background:url("img/plane.png") no-repeat center center;
+    background:url("../img/plane.png") no-repeat center center;
     background-repeat: no-repeat;
-    height: 100%; 
+    height: 100%;
 	padding-bottom:20px;
 	padding-top: 10px;
-	color: #000; 
+	color: #000;
 	background-size: inherit;
 	text-align: center;
 }
@@ -129,7 +128,7 @@ light {
 }
 mark{
 	background-color: #052060;
-	color: white; 
+	color: white;
 }
 
 img {
@@ -137,14 +136,14 @@ img {
     height: auto;
     margin: auto;
     display: block;
-    
+
 }
 
-/* 
+/*
  *  ----------------------------------------------------
- *                     FORM STYLES 
+ *                     FORM STYLES
  *  ----------------------------------------------------
- */ 
+ */
 /* labels */
 label {
     color: #fff;
@@ -159,7 +158,7 @@ label {
 input {
     background: transparent;
     border-bottom: 2px #fff solid;
-    border-top: 0px; 
+    border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     width: 200px;
@@ -200,18 +199,18 @@ button:a{
 
 
 
-/* 
+/*
  *  ----------------------------------------------------
- *                     NAV STYLES 
+ *                     NAV STYLES
  *  ----------------------------------------------------
  */
 /*.navbar {
 	position: relative;
 	min-height: 60px;
-	margin-bottom: 0; 
+	margin-bottom: 0;
 	width: 100%;
 	z-index: 999;
-	border-radius: 0; 
+	border-radius: 0;
     background: rgba(0,0,0,0.4)
 }
 
@@ -221,7 +220,7 @@ button:a{
 	width: 100%;
 	z-index: 999;
     background: rgba(0,0,0,0.0);
-	
+
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -274,7 +273,7 @@ color: #052060;
 }
 .navbar-nav>li>a:focus {
     background-color: none;
-    
+
 }
 */
 
@@ -301,15 +300,15 @@ color: #052060;
 }
 
 
-/* 
+/*
  *  ----------------------------------------------------
- *                     BANNER STYLES 
+ *                     BANNER STYLES
  *  ----------------------------------------------------
  */
 
 /*
 .full {
-  background: url(.../img/plane.png) no-repeat center center fixed; 
+  background: url(.../img/plane.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -331,14 +330,14 @@ color: #052060;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-    
+
 }
 
-/* 
+/*
  *  ----------------------------------------------------
- *                     ALIGNMENT 
+ *                     ALIGNMENT
  *  ----------------------------------------------------
- */ 
+ */
 
 /* modified from BASIC by Blacktie.co */
 .alignleft { float: left; }
@@ -362,9 +361,9 @@ color: #052060;
 
 /* end general */
 
-/* 
+/*
  *  ----------------------------------------------------
- *                     SECTION STYLES 
+ *                     SECTION STYLES
  *  ----------------------------------------------------
  */
 
@@ -388,7 +387,7 @@ color: #052060;
     letter-spacing: 4px;
     padding-left: 40px;
     padding-top:20px;
-    
+
 }
 
 .flight {
@@ -401,14 +400,14 @@ color: #052060;
     background: #eeeeee center repeat;
     padding-left: 10px;
     padding-right: 10px;
-    
+
 }
 
 
 
-/* 
+/*
  *  ----------------------------------------------------
- *                     PRELOADER 
+ *                     PRELOADER
  *  ----------------------------------------------------
  */
 
@@ -429,9 +428,9 @@ color: #052060;
 }
 /* end preloader */
 
-/* 
+/*
  *  ----------------------------------------------------
- *                   PANEL STYLES 
+ *                   PANEL STYLES
  *  ----------------------------------------------------
  */
 
@@ -439,7 +438,7 @@ color: #052060;
 .section_back {
     background-color: none;
     padding-top: 10px;
-    
+
 }
 
 .section_back_rt {
@@ -448,7 +447,7 @@ color: #052060;
 }
 
 .panel-heading {
-    background: #fff; 
+    background: #fff;
     border-radius: 0px;
     font-size: 14px;
     font-weight: 700;
@@ -456,14 +455,14 @@ color: #052060;
     text-transform: uppercase;
     border: 0px solid transparent;
     background-color: #fff;
-    
+
 }
 
 .panel {
     background: #fff;
     border-radius: 0px;
     border: 0px solid transparent;
-    
+
 }
 
 .panel-default{

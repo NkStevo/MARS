@@ -1,8 +1,17 @@
 """ This file contains commands to manage the website """
-import flask
-from app import app
+from flask import Flask
 from flask import render_template
-from flask_restful import Api
+
+app = Flask(__name__)
+app.debug = True
+
+@app.route("/")
+def index():
+    return render_template('index.html')
+
+@app.route("/test")
+def test():
+    return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080, debug=True, threaded=True)
+    app.run()
